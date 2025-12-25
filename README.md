@@ -248,7 +248,7 @@ Position 1    Position 2    Position 3    Position 4
 
 2. ✅ Recruit **3 additional users** who also made deposits
 
-3. ✅ **Nominate 1 successor** from those 3 additional users
+3. ✅ **THE SYSTEM AUTOMATICALLY nominate 1 successor** from those 3 additional users
 
 **Total: 13 depositing recruits required**
 
