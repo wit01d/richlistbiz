@@ -547,18 +547,6 @@ EARNINGS STATUS:
 
 ---
 
-## Rate Limits
-
-```
-LIMITS PER USER:
-├── Maximum 5 referral signups per day
-├── Maximum 20 referral signups per week
-├── Maximum 3 successor nominations per year
-└── Exceeding limits triggers manual review
-```
-
----
-
 ## Transparency & Privacy
 
 ### Visible to User

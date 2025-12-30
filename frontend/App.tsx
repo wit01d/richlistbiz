@@ -1,6 +1,6 @@
 import { Preload, ScrollControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import React, { Suspense } from 'react';
+import React, { Suspense, useCallback, useState } from 'react';
 import { HtmlOverlay } from './components/HtmlOverlay';
 import { NeonScene } from './components/NeonScene';
 
@@ -10,7 +10,17 @@ const Loader = () => (
   </div>
 );
 
+const PAGES_UNAUTHENTICATED = 3;
+const PAGES_DASHBOARD = 6; // Dashboard needs more scroll space
+
 const App: React.FC = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const pages = isAuthenticated ? PAGES_DASHBOARD : PAGES_UNAUTHENTICATED;
+
+  const handleAuthChange = useCallback((authenticated: boolean) => {
+    setIsAuthenticated(authenticated);
+  }, []);
+
   return (
     <main className="w-full h-screen bg-[#050011] relative">
       <Suspense fallback={<Loader />}>
@@ -21,12 +31,12 @@ const App: React.FC = () => {
         >
           <color attach="background" args={['#050011']} />
 
-          <ScrollControls pages={3} damping={0.2} distance={1}>
+          <ScrollControls pages={pages} damping={0.2} distance={1}>
              {/* 3D Scene Content */}
              <NeonScene />
 
              {/* HTML Overlay Content */}
-             <HtmlOverlay />
+             <HtmlOverlay onAuthChange={handleAuthChange} />
           </ScrollControls>
 
           <Preload all />

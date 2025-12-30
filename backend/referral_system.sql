@@ -41,7 +41,7 @@ CREATE TABLE listlines (
 CREATE TABLE deposits (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    amount DECIMAL(10,2) NOT NULL DEFAULT 100.00,
+    amount DECIMAL(10,2) NOT NULL DEFAULT 10.00,
     payment_method VARCHAR(50),
     transaction_id VARCHAR(255),
     status payment_status DEFAULT 'pending',
@@ -54,7 +54,7 @@ CREATE TABLE payments (
     from_user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     to_user_id UUID REFERENCES users(id) ON DELETE SET NULL,
     to_system BOOLEAN DEFAULT FALSE,
-    amount DECIMAL(10,2) NOT NULL DEFAULT 100.00,
+    amount DECIMAL(10,2) NOT NULL DEFAULT 10.00,
     listline_id UUID NOT NULL REFERENCES listlines(id) ON DELETE CASCADE,
     deposit_id UUID NOT NULL REFERENCES deposits(id) ON DELETE CASCADE,
     status payment_status DEFAULT 'pending',
