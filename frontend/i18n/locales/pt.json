@@ -1,0 +1,203 @@
+{
+  "common": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "decline": "Recusar",
+    "submit": "Enviar",
+    "reset": "Reiniciar",
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "loading": "Carregando...",
+    "signOut": "Sair",
+    "start": "Iniciar",
+    "pause": "Pausar"
+  },
+  "nav": {
+    "dashboard": "Painel",
+    "simulation": "Simulação"
+  },
+  "hero": {
+    "tagline": "Entre na sua própria lista.",
+    "watchVideo": "Veja como funciona"
+  },
+  "features": {
+    "register": {
+      "title": "Registre-se",
+      "desc": "e obtenha uma assinatura no RichList.biz."
+    },
+    "send": {
+      "title": "Envie",
+      "desc": "links para seus melhores amigos e convide-os a entrar na sua lista."
+    },
+    "earn": {
+      "title": "Ganhe",
+      "desc": "moedas para cada nova assinatura."
+    }
+  },
+  "signup": {
+    "title": "JUNTE-SE À LISTA",
+    "subtitle": "clicando no botão",
+    "register": "Registrar",
+    "footer": "e faça parte da",
+    "footerHighlight": "grande mudança."
+  },
+  "dashboard": {
+    "welcome": "Bem-vindo,",
+    "subtitle": "Sua listline está ativa. Comece a construir sua rede.",
+    "membershipFee": "Taxa de adesão:",
+    "yourLink": "Seu link:",
+    "maintenanceFee": "{{percent}}% de manutenção para o sistema"
+  },
+  "stats": {
+    "directReferrals": "Indicações Diretas",
+    "deposited": "depositado",
+    "totalEarnings": "Ganhos Totais",
+    "maintenanceDeducted": "{{percent}}% manutenção deduzida",
+    "globalRank": "Ranking Global",
+    "basedOnEarnings": "Baseado nos ganhos",
+    "successorsAvailable": "Sucessores Disponíveis",
+    "readyToNominate": "Pronto para nomear!",
+    "moreNeeded": "mais {{count}} necessário(s)"
+  },
+  "linkAnalytics": {
+    "title": "Estatísticas do Link de Indicação",
+    "subtitle": "Acompanhe o desempenho do seu link de indicação",
+    "totalViews": "Visualizações Totais",
+    "allTimeViews": "Todas as visualizações",
+    "uniqueViews": "Visualizações Únicas",
+    "uniqueVisitors": "Visitantes únicos",
+    "registrations": "Registros",
+    "signupsFromLink": "Cadastros pelo link",
+    "conversion": "Conversão",
+    "clickToSignupRate": "Taxa de clique para cadastro",
+    "noClicks": "Ainda não há cliques. Compartilhe seu link de indicação para começar a rastrear!"
+  },
+  "charts": {
+    "positionDistribution": "Distribuição de Posições",
+    "positionTooltip": "Quantas vezes você aparece em cada posição",
+    "earningsTimeline": "Linha do Tempo de Ganhos",
+    "noPaymentData": "Ainda não há dados de pagamento",
+    "cumulativeEarnings": "Ganhos acumulados ao longo do tempo",
+    "referralStatus": "Status das Indicações",
+    "noReferrals": "Ainda não há indicações",
+    "converted": "convertido",
+    "clicks": "{{count}} cliques",
+    "clicksLabel": "Cliques",
+    "listlines": "{{count}} listlines",
+    "countLabel": "Quantidade",
+    "total": "Total",
+    "payment": "Pagamento",
+    "referralsCount": "{{count}} indicações"
+  },
+  "successor": {
+    "title": "Progresso do Sucessor",
+    "referralsWithDeposits": "Indicações com depósitos",
+    "milestoneReached": "Marco Alcançado!",
+    "slotsAvailable": "Você tem {{count}} vaga(s) de sucessor disponível(is). O sistema selecionará automaticamente dos seus últimos 3 recrutados com depósito.",
+    "awaitingSelection": "Aguardando Seleção do Sistema...",
+    "usedAllSlots": "Você usou todas as suas nomeações de sucessor. Recrute mais membros para desbloquear vagas adicionais!",
+    "recruitMore": "Recrute mais {{count}} membro(s) com depósitos para desbloquear a função de nomeação de sucessor.",
+    "actionRequired": "Ação Necessária!",
+    "autoSelected": "O sistema selecionou automaticamente {{name}} como seu sucessor. Por favor confirme ou recuse esta nomeação.",
+    "reviewNomination": "Revisar Nomeação",
+    "confirmed": "Sucessor Confirmado!",
+    "transferSuccess": "O sucessor foi transferido com sucesso."
+  },
+  "successorModal": {
+    "title": "Confirmar Sucessor",
+    "subtitle": "Revisar e confirmar nomeação",
+    "joined": "Entrou em {{date}}",
+    "autoSelectedAt": "Auto-selecionado em {{date}}",
+    "explanation": "Ao confirmar esta nomeação:",
+    "willMove": "{{name}} será movido para a rede de {{position1}}",
+    "noLongerDownline": "Eles não farão mais parte da sua downline direta",
+    "cannotUndo": "Esta ação não pode ser desfeita",
+    "usedThisYear": "Sucessores usados este ano",
+    "confirming": "Confirmando..."
+  },
+  "payments": {
+    "title": "Pagamentos Recentes",
+    "noPayments": "Ainda não há pagamentos",
+    "noPaymentsDesc": "Você recebe {{amount}} quando alguém na sua rede alcança a Posição 4 (3 níveis de profundidade)"
+  },
+  "listline": {
+    "presenceTitle": "Sua Presença na Listline",
+    "presenceSubtitle": "Veja quantas vezes você aparece em cada posição em todas as listlines da rede.",
+    "position1": "Posição 1",
+    "position1Desc": "Recebe pagamentos",
+    "position2": "Posição 2",
+    "position2Desc": "2º ancestral nas cadeias",
+    "position3": "Posição 3",
+    "position3Desc": "Indicador direto",
+    "position4": "Posição 4",
+    "position4Desc": "Membro mais recente",
+    "earningsFromPosition1": "Ganhos da Posição 1",
+    "whatThisMeans": "O Que Isso Significa",
+    "received": "Você recebeu {{amount}} de {{count}} membros",
+    "oneLevelAway": "Você está a um nível de ganhar em {{count}} cadeias",
+    "directlyReferred": "Você indicou diretamente {{count}} membros",
+    "newestMember": "Você é o membro mais novo em {{count}} cadeias",
+    "ownListlineTitle": "Sua Própria Listline",
+    "ownListlineSubtitle": "Este é quem recebeu o pagamento quando você entrou. A Posição 1 recebeu {{amount}} da sua adesão.",
+    "howItWorks": "Como funciona:",
+    "rule1": "Quando você indica alguém, eles se tornam Posição 4 na própria listline deles",
+    "rule2": "Você (o indicador deles) se torna a Posição 3 deles",
+    "rule3": "Seu indicador se torna a Posição 2 deles",
+    "rule4": "O indicador do seu indicador (3 níveis acima) se torna Posição 1 e recebe o pagamento",
+    "rule5": "O sistema cobra {{percent}}% de manutenção de cada pagamento",
+    "paymentFlows": "Fluxo de pagamentos: P4 -> P3 -> P2 -> P1"
+  },
+  "positions": {
+    "receivedPayment": "Pagamento Recebido",
+    "secondAncestor": "2º Ancestral",
+    "directReferrer": "Indicador Direto",
+    "you": "Você"
+  },
+  "successorSystem": {
+    "title": "Sistema de Sucessor",
+    "description": "Após recrutar {{count}} membros que depositem, cada recrutado adicional pode ser nomeado como \"Sucessor\" - presenteado ao seu ancestral da Posição 1.",
+    "without": "Sem Sucessor",
+    "withoutDesc": "O novo recrutado permanece na sua downline direta",
+    "with": "Com Sucessor",
+    "withDesc": "O novo recrutado é movido para a downline da Posição 1 como recompensa"
+  },
+  "referrals": {
+    "title": "Suas Indicações Diretas",
+    "total": "total",
+    "joined": "Entrou em {{date}}",
+    "deposited": "Depositado",
+    "pending": "Pendente",
+    "noReferrals": "Ainda não há indicações",
+    "noReferralsDesc": "Compartilhe seu link único para construir sua rede. Você ganha quando sua cadeia cresce 3 níveis de profundidade!",
+    "copyLink": "Copiar Link de Indicação",
+    "networkTitle": "Sua Rede de Indicações",
+    "networkSubtitle": "Visualização interativa de árvore de 4 níveis - clique nos nós para detalhes"
+  },
+  "simulation": {
+    "title": "Simulação ao Vivo",
+    "subtitle": "Assista sua rede crescer em tempo real",
+    "speed": "Velocidade",
+    "views": "Visualizações",
+    "registrations": "Registros",
+    "deposits": "Depósitos",
+    "successors": "Sucessores",
+    "earnings": "Ganhos",
+    "recentActivity": "Atividade Recente",
+    "events": {
+      "newViews": "{{count}} nova(s) visualização(ões) do site",
+      "registered": "{{name}} registrado",
+      "registeredUnder": "{{name}} registrado sob {{parent}}",
+      "registeredDirect": "{{name}} registrado (direto)",
+      "deposited": "{{name}} depositou {{amount}}",
+      "receivedPayment": "Você recebeu {{amount}} de {{name}}!",
+      "successorNominated": "SUCESSOR: {{name}} nomeado! Movido para a rede de {{parent}}"
+    }
+  },
+  "status": {
+    "deposited": "Depositado",
+    "pending": "Pendente",
+    "active": "Ativo",
+    "verified": "Verificado",
+    "cleared": "Liberado"
+  }
+}

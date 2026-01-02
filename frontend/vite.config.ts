@@ -12,6 +12,8 @@ export default defineConfig(({ mode }) => {
       // port: 5173,
       // host: 'localhost',
     },
+    // SPA fallback - serve index.html for all routes
+    appType: 'spa',
 
     plugins: [react()],
     define: {

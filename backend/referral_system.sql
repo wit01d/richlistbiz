@@ -1,8 +1,56 @@
+-- =============================================================================
+-- RichList.biz Basic Database Schema
+-- =============================================================================
+--
+-- CONFIGURATION APPROACH
+-- Business constants are stored in the system_config table and accessed via
+-- helper functions (get_config_value, get_config_int).
+--
+-- To change a business constant:
+--   1. UPDATE system_config SET value = '"NEW_VALUE"' WHERE key = 'key_name';
+--   2. Also update: backend/internal/constants/business.go
+--   3. Also update: frontend/constants/business.ts
+--
+-- AVAILABLE CONFIG KEYS:
+--   deposit_amount           - Required deposit amount in EUR (default: 10.00)
+--   successor_sequence_max   - Max sequence number for successor nomination (default: 4)
+--
+-- SUCCESSOR SYSTEM:
+--   Each depositing recruit is assigned a random sequence number (1 to successor_sequence_max).
+--   When the Nth depositing recruit has sequence number = N, they are immediately nominated.
+--   Probability of nomination per recruit: 1/successor_sequence_max (25% with default of 4).
+--
+-- =============================================================================
+
 CREATE DATABASE richlist;
 
 \c richlist;
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- =============================================================================
+-- System Configuration Table
+-- =============================================================================
+CREATE TABLE system_config (
+    key VARCHAR(50) PRIMARY KEY,
+    value JSONB NOT NULL,
+    description TEXT,
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+INSERT INTO system_config (key, value, description) VALUES
+    ('deposit_amount', '10.00', 'Required deposit amount in EUR'),
+    ('successor_sequence_max', '4', 'Max sequence number for successor nomination (1-N, 25% chance per recruit)');
+
+CREATE OR REPLACE FUNCTION get_config_value(p_key VARCHAR)
+RETURNS DECIMAL AS $$
+    SELECT (value #>> '{}')::DECIMAL FROM system_config WHERE key = p_key;
+$$ LANGUAGE SQL STABLE;
+
+CREATE OR REPLACE FUNCTION get_config_int(p_key VARCHAR)
+RETURNS INTEGER AS $$
+    SELECT (value #>> '{}')::INTEGER FROM system_config WHERE key = p_key;
+$$ LANGUAGE SQL STABLE;
 
 CREATE TYPE payment_status AS ENUM ('pending', 'completed', 'failed');
 CREATE TYPE user_status AS ENUM ('active', 'inactive', 'suspended');
@@ -45,8 +93,10 @@ CREATE TABLE deposits (
     payment_method VARCHAR(50),
     transaction_id VARCHAR(255),
     status payment_status DEFAULT 'pending',
+    successor_sequence INTEGER DEFAULT floor(random() * 4 + 1)::INTEGER,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    completed_at TIMESTAMP WITH TIME ZONE
+    completed_at TIMESTAMP WITH TIME ZONE,
+    CONSTRAINT valid_successor_sequence CHECK (successor_sequence >= 1 AND successor_sequence <= 4)
 );
 
 CREATE TABLE payments (
@@ -194,16 +244,31 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION check_successor_eligibility(user_id UUID)
+-- Check if a user is eligible for successor nomination based on sequence matching.
+-- Returns TRUE if the latest depositing recruit's sequence number matches their position.
+CREATE OR REPLACE FUNCTION check_successor_eligibility(p_referrer_id UUID)
 RETURNS BOOLEAN AS $$
 DECLARE
     depositing_count INTEGER;
+    latest_sequence INTEGER;
 BEGIN
+    -- Count total depositing recruits
     SELECT COUNT(*) INTO depositing_count
-    FROM users
-    WHERE referrer_id = user_id AND has_deposited = TRUE;
+    FROM users u
+    JOIN deposits d ON d.user_id = u.id
+    WHERE u.referrer_id = p_referrer_id AND d.status = 'completed';
 
-    RETURN depositing_count >= 13;
+    -- Get the sequence number of the latest (Nth) depositing recruit
+    SELECT d.successor_sequence INTO latest_sequence
+    FROM users u
+    JOIN deposits d ON d.user_id = u.id
+    WHERE u.referrer_id = p_referrer_id AND d.status = 'completed'
+    ORDER BY d.completed_at DESC
+    LIMIT 1;
+
+    -- Check if position N matches sequence N (within the valid range)
+    RETURN depositing_count <= get_config_int('successor_sequence_max')
+       AND depositing_count = latest_sequence;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -284,11 +349,24 @@ FOR EACH ROW EXECUTE FUNCTION update_referral_counts();
 
 CREATE OR REPLACE FUNCTION update_depositing_referral_counts()
 RETURNS TRIGGER AS $$
+DECLARE
+    referrer_rec RECORD;
+    latest_deposit_user UUID;
 BEGIN
     IF NEW.has_deposited = TRUE AND OLD.has_deposited = FALSE THEN
         UPDATE users
         SET depositing_referrals_count = depositing_referrals_count + 1
         WHERE id = NEW.referrer_id;
+
+        -- Check if referrer is eligible for successor nomination
+        SELECT * INTO referrer_rec FROM users WHERE id = NEW.referrer_id;
+
+        IF referrer_rec.id IS NOT NULL
+           AND NOT referrer_rec.successor_nominated
+           AND check_successor_eligibility(NEW.referrer_id) THEN
+            -- The current user (NEW.id) is the successor since their sequence matched
+            PERFORM create_successor_listline(NEW.referrer_id, NEW.id);
+        END IF;
     END IF;
     RETURN NEW;
 END;

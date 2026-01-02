@@ -1,8 +1,8 @@
 import { Preload, ScrollControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React, { Suspense, useCallback, useState } from 'react';
-import { HtmlOverlay } from './components/HtmlOverlay';
-import { NeonScene } from './components/NeonScene';
+import { HtmlOverlay } from './ux/HtmlOverlay';
+import { NeonScene } from './ui/scene';
 
 const Loader = () => (
   <div className="absolute inset-0 flex items-center justify-center bg-[#050011] text-neon-pink font-display text-xl z-50">
@@ -43,10 +43,6 @@ const App: React.FC = () => {
         </Canvas>
       </Suspense>
 
-      {/* Persistent Audio/UI Controls could go here outside canvas if needed */}
-      <div className="fixed bottom-4 right-4 z-50 pointer-events-none">
-         {/* <span className="text-white/20 font-mono text-xs">RichList.biz 2025</span> */}
-      </div>
     </main>
   );
 };

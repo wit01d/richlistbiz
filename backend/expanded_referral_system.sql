@@ -1,5 +1,64 @@
+-- =============================================================================
+-- RichList.biz Expanded Database Schema
+-- =============================================================================
+--
+-- CONFIGURATION APPROACH
+-- Business constants are stored in the system_config table and accessed via
+-- helper functions (get_config_value, get_config_int).
+--
+-- To change a business constant:
+--   1. UPDATE system_config SET value = '"NEW_VALUE"' WHERE key = 'key_name';
+--   2. Also update: backend/internal/constants/business.go
+--   3. Also update: frontend/constants/business.ts
+--
+-- AVAILABLE CONFIG KEYS:
+--   deposit_amount           - Required deposit amount in EUR (default: 10.00)
+--   min_withdrawal           - Minimum withdrawal amount in EUR (default: 100.00)
+--   maintenance_fee_rate     - Platform fee percentage (default: 0.10)
+--   successor_sequence_max   - Max sequence number for successor nomination (default: 4)
+--
+-- SUCCESSOR SYSTEM:
+--   Each depositing recruit is assigned a random sequence number (1 to successor_sequence_max).
+--   When the Nth depositing recruit has sequence number = N, they are immediately nominated.
+--   Probability of nomination per recruit: 1/successor_sequence_max (25% with default of 4).
+--
+-- DB CONSTRAINTS:
+--   Constraints use loose sanity checks (e.g., amount > 0)
+--   Exact validation is enforced in the application layer
+--
+-- SYSTEM ACCOUNT:
+--   SYSTEM_UUID = '00000000-0000-0000-0000-000000000000'
+--
+-- =============================================================================
+
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS "pg_trgm";
+
+-- =============================================================================
+-- System Configuration Table
+-- =============================================================================
+CREATE TABLE system_config (
+    key VARCHAR(50) PRIMARY KEY,
+    value JSONB NOT NULL,
+    description TEXT,
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+INSERT INTO system_config (key, value, description) VALUES
+    ('deposit_amount', '10.00', 'Required deposit amount in EUR'),
+    ('min_withdrawal', '100.00', 'Minimum withdrawal amount in EUR'),
+    ('maintenance_fee_rate', '0.10', 'Platform maintenance fee (10%)'),
+    ('successor_sequence_max', '4', 'Max sequence number for successor nomination (1-N, 25% chance per recruit)');
+
+CREATE OR REPLACE FUNCTION get_config_value(p_key VARCHAR)
+RETURNS DECIMAL AS $$
+    SELECT (value #>> '{}')::DECIMAL FROM system_config WHERE key = p_key;
+$$ LANGUAGE SQL STABLE;
+
+CREATE OR REPLACE FUNCTION get_config_int(p_key VARCHAR)
+RETURNS INTEGER AS $$
+    SELECT (value #>> '{}')::INTEGER FROM system_config WHERE key = p_key;
+$$ LANGUAGE SQL STABLE;
 
 CREATE TYPE user_status AS ENUM ('pending', 'active', 'suspended', 'terminated');
 CREATE TYPE deposit_status AS ENUM ('pending', 'verified', 'cleared', 'refunded', 'chargedback');
@@ -79,12 +138,14 @@ CREATE TABLE deposits (
     listline_id UUID REFERENCES listlines(id),
     recipient_user_id UUID REFERENCES users(id),
     recipient_is_system BOOLEAN DEFAULT FALSE,
+    successor_sequence INTEGER DEFAULT floor(random() * 4 + 1)::INTEGER,
     cleared_at TIMESTAMPTZ,
     refunded_at TIMESTAMPTZ,
     chargeback_at TIMESTAMPTZ,
     metadata JSONB DEFAULT '{}',
     created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
+    updated_at TIMESTAMPTZ DEFAULT NOW(),
+    CONSTRAINT valid_successor_sequence CHECK (successor_sequence >= 1 AND successor_sequence <= 4)
 );
 
 CREATE TABLE earnings (
@@ -125,7 +186,8 @@ CREATE TABLE withdrawals (
     rejected_reason TEXT,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     updated_at TIMESTAMPTZ DEFAULT NOW(),
-    CONSTRAINT min_withdrawal CHECK (amount >= 10.00)
+    -- Loose sanity check; exact minimum enforced in application layer
+    CONSTRAINT min_withdrawal CHECK (amount > 0 AND amount <= 100000)
 );
 
 CREATE TABLE fraud_flags (
@@ -407,6 +469,8 @@ CREATE TRIGGER deposit_update_counts
     FOR EACH ROW
     EXECUTE FUNCTION update_depositing_recruits_count();
 
+-- Check if successor nomination should occur based on sequence matching.
+-- When the Nth depositing recruit has sequence number = N, they are immediately nominated.
 CREATE OR REPLACE FUNCTION check_successor_eligibility(p_user_id UUID)
 RETURNS VOID AS $$
 DECLARE
@@ -415,10 +479,38 @@ DECLARE
     successor_candidate UUID;
     new_parent UUID;
     new_listline_id UUID;
+    depositing_count INTEGER;
+    latest_sequence INTEGER;
+    max_sequence INTEGER;
 BEGIN
     SELECT * INTO user_rec FROM users WHERE id = p_user_id;
 
-    IF user_rec.successor_nominated OR user_rec.depositing_recruits_count < 13 THEN
+    -- Already nominated, skip
+    IF user_rec.successor_nominated THEN
+        RETURN;
+    END IF;
+
+    max_sequence := get_config_int('successor_sequence_max');
+
+    -- Count depositing recruits and get latest sequence
+    SELECT COUNT(*), MAX(d.successor_sequence)
+    INTO depositing_count, latest_sequence
+    FROM users u
+    JOIN deposits d ON d.user_id = u.id
+    WHERE u.referrer_id = p_user_id
+      AND d.status = 'cleared';
+
+    -- Get the sequence of the Nth (latest) recruit specifically
+    SELECT d.successor_sequence INTO latest_sequence
+    FROM users u
+    JOIN deposits d ON d.user_id = u.id
+    WHERE u.referrer_id = p_user_id
+      AND d.status = 'cleared'
+    ORDER BY d.cleared_at DESC
+    LIMIT 1;
+
+    -- Check if Nth recruit has sequence = N (within valid range)
+    IF depositing_count > max_sequence OR depositing_count != latest_sequence THEN
         RETURN;
     END IF;
 
@@ -434,12 +526,13 @@ BEGIN
 
     new_parent := listline_rec.position_1_user_id;
 
+    -- The successor is the latest depositing recruit (whose sequence matched)
     SELECT u.id INTO successor_candidate
     FROM users u
     JOIN deposits d ON d.user_id = u.id
     WHERE u.referrer_id = p_user_id
       AND d.status = 'cleared'
-    ORDER BY d.created_at DESC
+    ORDER BY d.cleared_at DESC
     LIMIT 1;
 
     IF successor_candidate IS NULL THEN
@@ -476,13 +569,18 @@ BEGIN
     ) VALUES (
         p_user_id, successor_candidate, new_parent,
         listline_rec.id, new_listline_id,
-        user_rec.depositing_recruits_count, NOW()
+        depositing_count, NOW()
     );
 
     INSERT INTO audit_log (user_id, action, entity_type, entity_id, new_values)
     VALUES (
         p_user_id, 'successor_nominated', 'successor_nomination', new_listline_id,
-        jsonb_build_object('successor_id', successor_candidate, 'new_parent_id', new_parent)
+        jsonb_build_object(
+            'successor_id', successor_candidate,
+            'new_parent_id', new_parent,
+            'deposit_position', depositing_count,
+            'sequence_number', latest_sequence
+        )
     );
 END;
 $$ LANGUAGE plpgsql;

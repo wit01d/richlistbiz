@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-RichList.biz is a gamified referral platform with a 4-position listline structure. Users pay €10 to join (via referral only), and payments flow to Position 1 of their listline. The system includes automatic successor promotion when users recruit 13+ depositing members.
+RichList.biz is a gamified referral platform with a 4-position listline structure. Users pay €10 to join (via referral only), and payments flow to Position 1 of their listline. The system includes automatic successor promotion via a sequence-based system (each recruit has 25% chance of triggering nomination).
 
 ## Commands
 
@@ -47,15 +47,15 @@ When user U joins via referrer R₁:
 **Payment always goes to Position 1.**
 
 ### Successor System
-Trigger: Position 4 recruits 13+ depositing users
-- System randomly selects 1 of last 3 recruits as successor
+Trigger: Each depositing recruit is assigned a random sequence number (1-4). When the Nth depositing recruit has sequence = N, they are immediately nominated as successor.
+- 25% chance per recruit of triggering nomination
 - Successor takes Position 4 on NEW listline with original Positions 1-3
-- Successor belongs to Position 1's network, not the nominator's
+- Successor is "gifted" to Position 1's network, not the nominator's
 
 ### Financial Rules
 - Fixed deposit: €10 (enforced by DB constraint)
 - 10% maintenance fee → €9 net payout
-- Minimum withdrawal: €10
+- Minimum withdrawal: €100
 - Chargeback window: 14-30 days before clearing
 - Earnings lifecycle: pending → verified → cleared
 

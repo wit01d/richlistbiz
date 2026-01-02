@@ -1,0 +1,203 @@
+{
+  "common": {
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "decline": "Refuser",
+    "submit": "Envoyer",
+    "reset": "Réinitialiser",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "loading": "Chargement...",
+    "signOut": "Déconnexion",
+    "start": "Démarrer",
+    "pause": "Pause"
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "simulation": "Simulation"
+  },
+  "hero": {
+    "tagline": "Rejoignez votre propre liste.",
+    "watchVideo": "Regardez comment ça marche"
+  },
+  "features": {
+    "register": {
+      "title": "Inscrivez-vous",
+      "desc": "et obtenez une adhésion sur RichList.biz."
+    },
+    "send": {
+      "title": "Envoyez",
+      "desc": "des liens à vos meilleurs amis et invitez-les à rejoindre votre liste."
+    },
+    "earn": {
+      "title": "Gagnez",
+      "desc": "des pièces pour chaque nouvelle adhésion."
+    }
+  },
+  "signup": {
+    "title": "REJOIGNEZ LA LISTE",
+    "subtitle": "en cliquant sur le bouton",
+    "register": "S'inscrire",
+    "footer": "et faites partie de",
+    "footerHighlight": "la grande révolution."
+  },
+  "dashboard": {
+    "welcome": "Bienvenue,",
+    "subtitle": "Votre listline est active. Commencez à construire votre réseau.",
+    "membershipFee": "Frais d'adhésion :",
+    "yourLink": "Votre lien :",
+    "maintenanceFee": "{{percent}}% de frais de maintenance au système"
+  },
+  "stats": {
+    "directReferrals": "Parrainages Directs",
+    "deposited": "déposé",
+    "totalEarnings": "Gains Totaux",
+    "maintenanceDeducted": "{{percent}}% maintenance déduit",
+    "globalRank": "Classement Mondial",
+    "basedOnEarnings": "Basé sur les gains",
+    "successorsAvailable": "Successeurs Disponibles",
+    "readyToNominate": "Prêt à nommer !",
+    "moreNeeded": "{{count}} de plus nécessaire(s)"
+  },
+  "linkAnalytics": {
+    "title": "Statistiques du Lien de Parrainage",
+    "subtitle": "Suivez les performances de votre lien de parrainage",
+    "totalViews": "Vues Totales",
+    "allTimeViews": "Toutes les vues",
+    "uniqueViews": "Vues Uniques",
+    "uniqueVisitors": "Visiteurs uniques",
+    "registrations": "Inscriptions",
+    "signupsFromLink": "Inscriptions via le lien",
+    "conversion": "Conversion",
+    "clickToSignupRate": "Taux clic vers inscription",
+    "noClicks": "Pas encore de clics. Partagez votre lien de parrainage pour commencer le suivi !"
+  },
+  "charts": {
+    "positionDistribution": "Distribution des Positions",
+    "positionTooltip": "Combien de fois vous apparaissez à chaque position",
+    "earningsTimeline": "Chronologie des Gains",
+    "noPaymentData": "Pas encore de données de paiement",
+    "cumulativeEarnings": "Gains cumulés dans le temps",
+    "referralStatus": "Statut des Parrainages",
+    "noReferrals": "Pas encore de parrainages",
+    "converted": "converti",
+    "clicks": "{{count}} clics",
+    "clicksLabel": "Clics",
+    "listlines": "{{count}} listlines",
+    "countLabel": "Nombre",
+    "total": "Total",
+    "payment": "Paiement",
+    "referralsCount": "{{count}} parrainages"
+  },
+  "successor": {
+    "title": "Progression Successeur",
+    "referralsWithDeposits": "Parrainages avec dépôts",
+    "milestoneReached": "Jalon Atteint !",
+    "slotsAvailable": "Vous avez {{count}} emplacement(s) successeur disponible(s). Le système sélectionnera automatiquement parmi vos 3 dernières recrues ayant déposé.",
+    "awaitingSelection": "En attente de sélection système...",
+    "usedAllSlots": "Vous avez utilisé toutes vos nominations de successeur. Recrutez plus de membres pour débloquer des emplacements supplémentaires !",
+    "recruitMore": "Recrutez encore {{count}} membre(s) avec dépôts pour débloquer la fonction de nomination de successeur.",
+    "actionRequired": "Action Requise !",
+    "autoSelected": "Le système a automatiquement sélectionné {{name}} comme votre successeur. Veuillez confirmer ou refuser cette nomination.",
+    "reviewNomination": "Examiner la Nomination",
+    "confirmed": "Successeur Confirmé !",
+    "transferSuccess": "Le successeur a été transféré avec succès."
+  },
+  "successorModal": {
+    "title": "Confirmer le Successeur",
+    "subtitle": "Examiner et confirmer la nomination",
+    "joined": "Inscrit le {{date}}",
+    "autoSelectedAt": "Auto-sélectionné le {{date}}",
+    "explanation": "En confirmant cette nomination :",
+    "willMove": "{{name}} rejoindra le réseau de {{position1}}",
+    "noLongerDownline": "Ils ne feront plus partie de votre downline directe",
+    "cannotUndo": "Cette action ne peut pas être annulée",
+    "usedThisYear": "Successeurs utilisés cette année",
+    "confirming": "Confirmation..."
+  },
+  "payments": {
+    "title": "Paiements Récents",
+    "noPayments": "Pas encore de paiements",
+    "noPaymentsDesc": "Vous recevez {{amount}} quand quelqu'un dans votre réseau atteint la Position 4 (3 niveaux de profondeur)"
+  },
+  "listline": {
+    "presenceTitle": "Votre Présence Listline",
+    "presenceSubtitle": "Voyez combien de fois vous apparaissez à chaque position dans toutes les listlines du réseau.",
+    "position1": "Position 1",
+    "position1Desc": "Reçoit les paiements",
+    "position2": "Position 2",
+    "position2Desc": "2ème ancêtre dans les chaînes",
+    "position3": "Position 3",
+    "position3Desc": "Parrain direct",
+    "position4": "Position 4",
+    "position4Desc": "Membre le plus récent",
+    "earningsFromPosition1": "Gains de la Position 1",
+    "whatThisMeans": "Ce Que Cela Signifie",
+    "received": "Vous avez reçu {{amount}} de {{count}} membres",
+    "oneLevelAway": "Vous êtes à un niveau de gagner sur {{count}} chaînes",
+    "directlyReferred": "Vous avez directement parrainé {{count}} membres",
+    "newestMember": "Vous êtes le membre le plus récent dans {{count}} chaînes",
+    "ownListlineTitle": "Votre Propre Listline",
+    "ownListlineSubtitle": "Voici qui a reçu le paiement quand vous avez rejoint. La Position 1 a reçu {{amount}} de votre adhésion.",
+    "howItWorks": "Comment ça marche :",
+    "rule1": "Quand vous parrainez quelqu'un, il devient Position 4 dans sa propre listline",
+    "rule2": "Vous (leur parrain) devenez leur Position 3",
+    "rule3": "Votre parrain devient leur Position 2",
+    "rule4": "Le parrain de votre parrain (3 niveaux plus haut) devient Position 1 et reçoit le paiement",
+    "rule5": "Le système prélève {{percent}}% de frais de maintenance sur chaque paiement",
+    "paymentFlows": "Flux des paiements : P4 -> P3 -> P2 -> P1"
+  },
+  "positions": {
+    "receivedPayment": "Paiement Reçu",
+    "secondAncestor": "2ème Ancêtre",
+    "directReferrer": "Parrain Direct",
+    "you": "Vous"
+  },
+  "successorSystem": {
+    "title": "Système de Successeur",
+    "description": "Après avoir recruté {{count}} membres qui déposent, chaque recrue supplémentaire peut être nominée comme \"Successeur\" - offerte à votre ancêtre Position 1.",
+    "without": "Sans Successeur",
+    "withoutDesc": "La nouvelle recrue reste dans votre downline directe",
+    "with": "Avec Successeur",
+    "withDesc": "La nouvelle recrue est déplacée vers la downline de Position 1 comme récompense"
+  },
+  "referrals": {
+    "title": "Vos Parrainages Directs",
+    "total": "total",
+    "joined": "Inscrit le {{date}}",
+    "deposited": "Déposé",
+    "pending": "En attente",
+    "noReferrals": "Pas encore de parrainages",
+    "noReferralsDesc": "Partagez votre lien unique pour construire votre réseau. Vous gagnez quand votre chaîne grandit de 3 niveaux !",
+    "copyLink": "Copier le Lien de Parrainage",
+    "networkTitle": "Votre Réseau de Parrainage",
+    "networkSubtitle": "Visualisation interactive de l'arbre à 4 niveaux - cliquez sur les nœuds pour les détails"
+  },
+  "simulation": {
+    "title": "Simulation en Direct",
+    "subtitle": "Regardez votre réseau grandir en temps réel",
+    "speed": "Vitesse",
+    "views": "Vues",
+    "registrations": "Inscriptions",
+    "deposits": "Dépôts",
+    "successors": "Successeurs",
+    "earnings": "Gains",
+    "recentActivity": "Activité Récente",
+    "events": {
+      "newViews": "{{count}} nouvelle(s) vue(s) du site",
+      "registered": "{{name}} inscrit",
+      "registeredUnder": "{{name}} inscrit sous {{parent}}",
+      "registeredDirect": "{{name}} inscrit (direct)",
+      "deposited": "{{name}} a déposé {{amount}}",
+      "receivedPayment": "Vous avez reçu {{amount}} de {{name}} !",
+      "successorNominated": "SUCCESSEUR : {{name}} nominé ! Déplacé vers le réseau de {{parent}}"
+    }
+  },
+  "status": {
+    "deposited": "Déposé",
+    "pending": "En attente",
+    "active": "Actif",
+    "verified": "Vérifié",
+    "cleared": "Validé"
+  }
+}

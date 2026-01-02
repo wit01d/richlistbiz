@@ -1,0 +1,203 @@
+{
+  "common": {
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "decline": "Ablehnen",
+    "submit": "Absenden",
+    "reset": "Zurücksetzen",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "loading": "Laden...",
+    "signOut": "Abmelden",
+    "start": "Starten",
+    "pause": "Pause"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "simulation": "Simulation"
+  },
+  "hero": {
+    "tagline": "Komm auf deine eigene Liste.",
+    "watchVideo": "Schau wie es funktioniert"
+  },
+  "features": {
+    "register": {
+      "title": "Registrieren",
+      "desc": "und werde Mitglied bei RichList.biz."
+    },
+    "send": {
+      "title": "Senden",
+      "desc": "Links an deine besten Freunde und lade sie ein beizutreten."
+    },
+    "earn": {
+      "title": "Verdienen",
+      "desc": "Münzen für jede neue Mitgliedschaft."
+    }
+  },
+  "signup": {
+    "title": "WERDE MITGLIED",
+    "subtitle": "durch Klicken auf den Button",
+    "register": "Registrieren",
+    "footer": "und sei Teil von",
+    "footerHighlight": "der großen Veränderung."
+  },
+  "dashboard": {
+    "welcome": "Willkommen,",
+    "subtitle": "Deine Listline ist aktiv. Beginne dein Netzwerk aufzubauen.",
+    "membershipFee": "Mitgliedsbeitrag:",
+    "yourLink": "Dein Link:",
+    "maintenanceFee": "{{percent}}% Wartungsgebühr ans System"
+  },
+  "stats": {
+    "directReferrals": "Direkte Empfehlungen",
+    "deposited": "eingezahlt",
+    "totalEarnings": "Gesamtverdienst",
+    "maintenanceDeducted": "{{percent}}% Wartung abgezogen",
+    "globalRank": "Weltrangliste",
+    "basedOnEarnings": "Basierend auf Verdienst",
+    "successorsAvailable": "Nachfolger Verfügbar",
+    "readyToNominate": "Bereit zur Nominierung!",
+    "moreNeeded": "noch {{count}} benötigt"
+  },
+  "linkAnalytics": {
+    "title": "Empfehlungslink Statistiken",
+    "subtitle": "Verfolge wie dein Empfehlungslink performt",
+    "totalViews": "Gesamte Aufrufe",
+    "allTimeViews": "Alle Aufrufe",
+    "uniqueViews": "Einzigartige Aufrufe",
+    "uniqueVisitors": "Einzigartige Besucher",
+    "registrations": "Registrierungen",
+    "signupsFromLink": "Anmeldungen über Link",
+    "conversion": "Konversion",
+    "clickToSignupRate": "Klick zu Anmeldung Rate",
+    "noClicks": "Noch keine Link-Klicks. Teile deinen Empfehlungslink um zu tracken!"
+  },
+  "charts": {
+    "positionDistribution": "Positions-Verteilung",
+    "positionTooltip": "Wie oft du auf jeder Position erscheinst",
+    "earningsTimeline": "Verdienst-Zeitlinie",
+    "noPaymentData": "Noch keine Zahlungsdaten",
+    "cumulativeEarnings": "Kumulativer Verdienst über Zeit",
+    "referralStatus": "Empfehlungs-Status",
+    "noReferrals": "Noch keine Empfehlungen",
+    "converted": "konvertiert",
+    "clicks": "{{count}} Klicks",
+    "clicksLabel": "Klicks",
+    "listlines": "{{count}} Listlines",
+    "countLabel": "Anzahl",
+    "total": "Gesamt",
+    "payment": "Zahlung",
+    "referralsCount": "{{count}} Empfehlungen"
+  },
+  "successor": {
+    "title": "Nachfolger-Fortschritt",
+    "referralsWithDeposits": "Empfehlungen mit Einzahlungen",
+    "milestoneReached": "Meilenstein Erreicht!",
+    "slotsAvailable": "Du hast {{count}} Nachfolger-Slot(s) verfügbar. Das System wählt automatisch aus deinen letzten 3 einzahlenden Recruits.",
+    "awaitingSelection": "Warte auf System-Auswahl...",
+    "usedAllSlots": "Du hast alle Nachfolger-Nominierungen verbraucht. Werbe mehr Mitglieder um zusätzliche Slots freizuschalten!",
+    "recruitMore": "Werbe noch {{count}} Mitglieder mit Einzahlungen um die Nachfolger-Nominierung freizuschalten.",
+    "actionRequired": "Aktion Erforderlich!",
+    "autoSelected": "Das System hat automatisch {{name}} als deinen Nachfolger ausgewählt. Bitte bestätige oder lehne diese Nominierung ab.",
+    "reviewNomination": "Nominierung Prüfen",
+    "confirmed": "Nachfolger Bestätigt!",
+    "transferSuccess": "Der Nachfolger wurde erfolgreich übertragen."
+  },
+  "successorModal": {
+    "title": "Nachfolger Bestätigen",
+    "subtitle": "Nominierung prüfen und bestätigen",
+    "joined": "Beigetreten {{date}}",
+    "autoSelectedAt": "Auto-ausgewählt {{date}}",
+    "explanation": "Durch Bestätigung dieser Nominierung:",
+    "willMove": "{{name}} wechselt zu {{position1}}s Netzwerk",
+    "noLongerDownline": "Sie werden nicht mehr Teil deiner direkten Downline sein",
+    "cannotUndo": "Diese Aktion kann nicht rückgängig gemacht werden",
+    "usedThisYear": "Nachfolger dieses Jahr verwendet",
+    "confirming": "Bestätige..."
+  },
+  "payments": {
+    "title": "Letzte Zahlungen",
+    "noPayments": "Noch keine Zahlungen",
+    "noPaymentsDesc": "Du erhältst {{amount}} wenn jemand in deinem Netzwerk Position 4 erreicht (3 Ebenen tief)"
+  },
+  "listline": {
+    "presenceTitle": "Deine Listline-Präsenz",
+    "presenceSubtitle": "Sieh wie oft du auf jeder Position in allen Listlines im Netzwerk erscheinst.",
+    "position1": "Position 1",
+    "position1Desc": "Empfängt Zahlungen",
+    "position2": "Position 2",
+    "position2Desc": "2. Vorfahr in Ketten",
+    "position3": "Position 3",
+    "position3Desc": "Direkter Empfehler",
+    "position4": "Position 4",
+    "position4Desc": "Neuestes Mitglied",
+    "earningsFromPosition1": "Verdienst von Position 1",
+    "whatThisMeans": "Was Das Bedeutet",
+    "received": "Du hast {{amount}} von {{count}} Mitgliedern erhalten",
+    "oneLevelAway": "Du bist eine Ebene vom Verdienen in {{count}} Ketten entfernt",
+    "directlyReferred": "Du hast {{count}} Mitglieder direkt empfohlen",
+    "newestMember": "Du bist das neueste Mitglied in {{count}} Ketten",
+    "ownListlineTitle": "Deine Eigene Listline",
+    "ownListlineSubtitle": "Das ist wer die Zahlung erhielt als du beigetreten bist. Position 1 erhielt {{amount}} von deiner Mitgliedschaft.",
+    "howItWorks": "So funktioniert es:",
+    "rule1": "Wenn du jemanden empfiehlst, wird er Position 4 in seiner eigenen Listline",
+    "rule2": "Du (ihr Empfehler) wirst ihre Position 3",
+    "rule3": "Dein Empfehler wird ihre Position 2",
+    "rule4": "Der Empfehler deines Empfehlers (3 Ebenen hoch) wird Position 1 und erhält die Zahlung",
+    "rule5": "Das System erhebt {{percent}}% Wartungsgebühr von jeder Zahlung",
+    "paymentFlows": "Zahlungsfluss: P4 -> P3 -> P2 -> P1"
+  },
+  "positions": {
+    "receivedPayment": "Zahlung Erhalten",
+    "secondAncestor": "2. Vorfahr",
+    "directReferrer": "Direkter Empfehler",
+    "you": "Du"
+  },
+  "successorSystem": {
+    "title": "Nachfolger-System",
+    "description": "Nach dem Werben von {{count}} Mitgliedern die einzahlen, kann jeder zusätzliche Recruit als \"Nachfolger\" nominiert werden - geschenkt an deinen Position 1 Vorfahren.",
+    "without": "Ohne Nachfolger",
+    "withoutDesc": "Neuer Recruit bleibt in deiner direkten Downline",
+    "with": "Mit Nachfolger",
+    "withDesc": "Neuer Recruit wird zu Position 1s Downline als Belohnung verschoben"
+  },
+  "referrals": {
+    "title": "Deine Direkten Empfehlungen",
+    "total": "gesamt",
+    "joined": "Beigetreten {{date}}",
+    "deposited": "Eingezahlt",
+    "pending": "Ausstehend",
+    "noReferrals": "Noch keine Empfehlungen",
+    "noReferralsDesc": "Teile deinen einzigartigen Link um dein Netzwerk aufzubauen. Du verdienst wenn deine Kette 3 Ebenen tief wächst!",
+    "copyLink": "Empfehlungslink Kopieren",
+    "networkTitle": "Dein Empfehlungsnetzwerk",
+    "networkSubtitle": "Interaktive 4-Ebenen Baum-Visualisierung - klicke auf Knoten für Details"
+  },
+  "simulation": {
+    "title": "Live Simulation",
+    "subtitle": "Sieh zu wie dein Netzwerk in Echtzeit wächst",
+    "speed": "Geschwindigkeit",
+    "views": "Aufrufe",
+    "registrations": "Registrierungen",
+    "deposits": "Einzahlungen",
+    "successors": "Nachfolger",
+    "earnings": "Verdienst",
+    "recentActivity": "Letzte Aktivität",
+    "events": {
+      "newViews": "{{count}} neue(r) Seitenaufruf(e)",
+      "registered": "{{name}} registriert",
+      "registeredUnder": "{{name}} registriert unter {{parent}}",
+      "registeredDirect": "{{name}} registriert (direkt)",
+      "deposited": "{{name}} hat {{amount}} eingezahlt",
+      "receivedPayment": "Du hast {{amount}} von {{name}} erhalten!",
+      "successorNominated": "NACHFOLGER: {{name}} nominiert! Verschoben zu {{parent}}s Netzwerk"
+    }
+  },
+  "status": {
+    "deposited": "Eingezahlt",
+    "pending": "Ausstehend",
+    "active": "Aktiv",
+    "verified": "Verifiziert",
+    "cleared": "Freigegeben"
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "decline": "Decline",
+    "submit": "Submit",
+    "reset": "Reset",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "loading": "Loading...",
+    "signOut": "Sign Out",
+    "start": "Start",
+    "pause": "Pause"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "simulation": "Simulation"
+  },
+  "hero": {
+    "tagline": "Get on your own list.",
+    "watchVideo": "Watch how it works"
+  },
+  "features": {
+    "register": {
+      "title": "Register",
+      "desc": "and get a membership on RichList.biz."
+    },
+    "send": {
+      "title": "Send",
+      "desc": "links to your best friends and invite them to join your list."
+    },
+    "earn": {
+      "title": "Earn",
+      "desc": "coins for every new membership."
+    }
+  },
+  "signup": {
+    "title": "JOIN THE LIST",
+    "subtitle": "by clicking the button",
+    "register": "Register",
+    "footer": "and be the part of",
+    "footerHighlight": "the big change."
+  },
+  "dashboard": {
+    "welcome": "Welcome,",
+    "subtitle": "Your listline is active. Start building your network.",
+    "membershipFee": "Membership Fee:",
+    "yourLink": "Your link/ Your code:",
+    "maintenanceFee": "{{percent}}% maintenance fee to system"
+  },
+  "stats": {
+    "directReferrals": "Direct Referrals",
+    "deposited": "deposited",
+    "totalEarnings": "Total Earnings",
+    "maintenanceDeducted": "{{percent}}% maintenance deducted",
+    "globalRank": "Global Rank",
+    "basedOnEarnings": "Based on earnings",
+    "successorsAvailable": "Successors Available",
+    "readyToNominate": "Ready to nominate!",
+    "moreNeeded": "{{count}} more needed",
+    "chancesUsed": "All chances used",
+    "chancesRemaining": "{{count}} chances remaining"
+  },
+  "linkAnalytics": {
+    "title": "Referral Link Analytics",
+    "subtitle": "Track how your referral link is performing",
+    "totalViews": "Total Views",
+    "allTimeViews": "All time views",
+    "uniqueViews": "Unique Views",
+    "uniqueVisitors": "Unique visitors",
+    "views": "Views",
+    "registrations": "Registrations",
+    "deposits": "Deposits",
+    "signupsFromLink": "Sign-ups from link",
+    "fromReferrals": "From referrals",
+    "conversion": "Conversion",
+    "clickToSignupRate": "Click to signup rate",
+    "noClicks": "No link clicks yet. Share your referral link to start tracking!"
+  },
+  "charts": {
+    "positionDistribution": "Position Distribution",
+    "positionTooltip": "How often you appear at each position",
+    "earningsTimeline": "Earnings Timeline",
+    "noPaymentData": "No payment data yet",
+    "cumulativeEarnings": "Cumulative earnings over time",
+    "referralStatus": "Referral Status",
+    "noReferrals": "No referrals yet",
+    "converted": "converted",
+    "clicks": "{{count}} clicks",
+    "clicksLabel": "Clicks",
+    "listlines": "{{count}} listlines",
+    "countLabel": "Count",
+    "total": "Total",
+    "payment": "Payment",
+    "referralsCount": "{{count}} referrals"
+  },
+  "successor": {
+    "title": "Successor Progress",
+    "referralsWithDeposits": "Referrals with deposits",
+    "milestoneReached": "Milestone Reached!",
+    "slotsAvailable": "You have {{count}} successor slot(s) available. The system will automatically select from your last 3 depositing recruits.",
+    "awaitingSelection": "Awaiting System Selection...",
+    "usedAllSlots": "You've used all your successor nominations. Recruit more members to unlock additional slots!",
+    "recruitMore": "Recruit {{count}} more members with deposits to unlock the successor nomination feature.",
+    "actionRequired": "Action Required!",
+    "autoSelected": "System has auto-selected {{name}} as your successor. Please confirm or decline this nomination.",
+    "reviewNomination": "Review Nomination",
+    "confirmed": "Successor Confirmed!",
+    "transferSuccess": "The successor has been transferred successfully."
+  },
+  "successorModal": {
+    "title": "Confirm Successor",
+    "subtitle": "Review and confirm nomination",
+    "joined": "Joined {{date}}",
+    "autoSelectedAt": "Auto-selected {{date}}",
+    "explanation": "By confirming this nomination:",
+    "willMove": "{{name}} will move to {{position1}}'s network",
+    "noLongerDownline": "They will no longer be part of your direct downline",
+    "cannotUndo": "This action cannot be undone",
+    "usedThisYear": "Successors used this year",
+    "confirming": "Confirming..."
+  },
+  "payments": {
+    "title": "Recent Payments",
+    "noPayments": "No payments yet",
+    "noPaymentsDesc": "You receive {{amount}} when someone in your network reaches Position 4 (3 levels deep)"
+  },
+  "listline": {
+    "presenceTitle": "Your Listline Presence",
+    "presenceSubtitle": "See how many times you appear at each position across all listlines in the network.",
+    "position1": "Position 1",
+    "position1Desc": "Receiving payments",
+    "position2": "Position 2",
+    "position2Desc": "2nd ancestor in chains",
+    "position3": "Position 3",
+    "position3Desc": "Direct referrer",
+    "position4": "Position 4",
+    "position4Desc": "Newest member",
+    "earningsFromPosition1": "Earnings from Position 1",
+    "whatThisMeans": "What This Means",
+    "received": "You've received {{amount}} from {{count}} members",
+    "oneLevelAway": "You're one level away from earning on {{count}} chains",
+    "directlyReferred": "You directly referred {{count}} members",
+    "newestMember": "You're the newest member in {{count}} chains",
+    "ownListlineTitle": "Your Own Listline",
+    "ownListlineSubtitle": "This is who received payment when you joined. Position 1 received {{amount}} from your membership.",
+    "howItWorks": "How it works:",
+    "rule1": "When you refer someone, they become Position 4 in their own listline",
+    "rule2": "You (their referrer) become their Position 3",
+    "rule3": "Your referrer becomes their Position 2",
+    "rule4": "Your referrer's referrer (3 levels up) becomes Position 1 and receives the payment",
+    "rule5": "The system collects {{percent}}% maintenance fee from every payment",
+    "paymentFlows": "Payment flows: P4 -> P3 -> P2 -> P1"
+  },
+  "positions": {
+    "receivedPayment": "Received Payment",
+    "secondAncestor": "2nd Ancestor",
+    "directReferrer": "Direct Referrer",
+    "you": "You"
+  },
+  "successorSystem": {
+    "title": "Successor System",
+    "description": "After recruiting {{count}} members who deposit, each additional recruit can be nominated as a \"Successor\" - gifted to your Position 1 ancestor.",
+    "without": "Without Successor",
+    "withoutDesc": "New recruit stays in your direct downline",
+    "with": "With Successor",
+    "withDesc": "New recruit is moved to Position 1's downline as a reward"
+  },
+  "referrals": {
+    "title": "Your Direct Referrals",
+    "total": "total",
+    "joined": "Joined {{date}}",
+    "deposited": "Deposited",
+    "pending": "Pending",
+    "noReferrals": "No referrals yet",
+    "noReferralsDesc": "Share your unique link to start building your network. You earn when your chain grows 3 levels deep!",
+    "copyLink": "Copy Referral Link",
+    "networkTitle": "Your Referral Network",
+    "networkSubtitle": "Interactive 4-level tree visualization - click nodes for details"
+  },
+  "simulation": {
+    "title": "Live Simulation",
+    "subtitle": "Watch your network grow in real-time",
+    "speed": "Speed",
+    "views": "Views",
+    "registrations": "Registrations",
+    "deposits": "Deposits",
+    "successors": "Successors",
+    "earnings": "Earnings",
+    "recentActivity": "Recent Activity",
+    "events": {
+      "newViews": "{{count}} new site view(s)",
+      "registered": "{{name}} registered",
+      "registeredUnder": "{{name}} registered under {{parent}}",
+      "registeredDirect": "{{name}} registered (direct)",
+      "deposited": "{{name}} deposited {{amount}}",
+      "receivedPayment": "You received {{amount}} from {{name}}!",
+      "successorNominated": "SUCCESSOR: {{name}} nominated! Moved to {{parent}}'s network"
+    }
+  },
+  "status": {
+    "deposited": "Deposited",
+    "pending": "Pending",
+    "active": "Active",
+    "verified": "Verified",
+    "cleared": "Cleared"
+  },
+  "withdrawal": {
+    "title": "Withdraw Funds",
+    "subtitle": "Transfer earnings to your account",
+    "sectionTitle": "Withdraw Earnings",
+    "sectionSubtitle": "Transfer your cleared earnings to your bank account",
+    "availableBalance": "Available Balance",
+    "minRequired": "Minimum {{amount}} required",
+    "needMore": "Need {{amount}} more to withdraw",
+    "requirements": "Requirements",
+    "minBalance": "Minimum balance of {{amount}}",
+    "kycCompleted": "KYC verification completed",
+    "accountAge": "Account age minimum 30 days",
+    "recentActivity": "Recent login activity",
+    "amount": "Withdrawal Amount",
+    "minAmountError": "Minimum withdrawal is {{amount}}",
+    "insufficientBalance": "Amount exceeds available balance",
+    "coolingPeriod": "48-hour cooling period applies. Funds will be processed after verification.",
+    "processing": "Processing...",
+    "withdrawButton": "Withdraw {{amount}}",
+    "notEligible": "You don't meet all requirements for withdrawal yet."
+  }
+}

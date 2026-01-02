@@ -1,0 +1,203 @@
+{
+  "common": {
+    "cancel": "Annuleren",
+    "confirm": "Bevestigen",
+    "decline": "Afwijzen",
+    "submit": "Versturen",
+    "reset": "Resetten",
+    "copy": "Kopiëren",
+    "copied": "Gekopieerd!",
+    "loading": "Laden...",
+    "signOut": "Uitloggen",
+    "start": "Start",
+    "pause": "Pauze"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "simulation": "Simulatie"
+  },
+  "hero": {
+    "tagline": "Kom op je eigen lijst.",
+    "watchVideo": "Bekijk hoe het werkt"
+  },
+  "features": {
+    "register": {
+      "title": "Registreer",
+      "desc": "en krijg een lidmaatschap op RichList.biz."
+    },
+    "send": {
+      "title": "Stuur",
+      "desc": "links naar je beste vrienden en nodig ze uit om lid te worden."
+    },
+    "earn": {
+      "title": "Verdien",
+      "desc": "munten voor elk nieuw lidmaatschap."
+    }
+  },
+  "signup": {
+    "title": "WORD LID",
+    "subtitle": "door op de knop te klikken",
+    "register": "Registreren",
+    "footer": "en maak deel uit van",
+    "footerHighlight": "de grote verandering."
+  },
+  "dashboard": {
+    "welcome": "Welkom,",
+    "subtitle": "Je listline is actief. Begin met het bouwen van je netwerk.",
+    "membershipFee": "Lidmaatschapskosten:",
+    "yourLink": "Jouw link:",
+    "maintenanceFee": "{{percent}}% onderhoudskosten naar systeem"
+  },
+  "stats": {
+    "directReferrals": "Directe Verwijzingen",
+    "deposited": "gestort",
+    "totalEarnings": "Totale Verdiensten",
+    "maintenanceDeducted": "{{percent}}% onderhoud ingehouden",
+    "globalRank": "Wereldranglijst",
+    "basedOnEarnings": "Gebaseerd op verdiensten",
+    "successorsAvailable": "Opvolgers Beschikbaar",
+    "readyToNominate": "Klaar om te nomineren!",
+    "moreNeeded": "nog {{count}} nodig"
+  },
+  "linkAnalytics": {
+    "title": "Verwijslink Statistieken",
+    "subtitle": "Volg hoe je verwijslink presteert",
+    "totalViews": "Totaal Weergaven",
+    "allTimeViews": "Alle weergaven",
+    "uniqueViews": "Unieke Weergaven",
+    "uniqueVisitors": "Unieke bezoekers",
+    "registrations": "Registraties",
+    "signupsFromLink": "Aanmeldingen via link",
+    "conversion": "Conversie",
+    "clickToSignupRate": "Klik naar aanmelding ratio",
+    "noClicks": "Nog geen link kliks. Deel je verwijslink om te beginnen met tracken!"
+  },
+  "charts": {
+    "positionDistribution": "Positie Verdeling",
+    "positionTooltip": "Hoe vaak je op elke positie verschijnt",
+    "earningsTimeline": "Verdiensten Tijdlijn",
+    "noPaymentData": "Nog geen betalingsgegevens",
+    "cumulativeEarnings": "Cumulatieve verdiensten over tijd",
+    "referralStatus": "Verwijzing Status",
+    "noReferrals": "Nog geen verwijzingen",
+    "converted": "geconverteerd",
+    "clicks": "{{count}} kliks",
+    "clicksLabel": "Kliks",
+    "listlines": "{{count}} listlines",
+    "countLabel": "Aantal",
+    "total": "Totaal",
+    "payment": "Betaling",
+    "referralsCount": "{{count}} verwijzingen"
+  },
+  "successor": {
+    "title": "Opvolger Voortgang",
+    "referralsWithDeposits": "Verwijzingen met stortingen",
+    "milestoneReached": "Mijlpaal Bereikt!",
+    "slotsAvailable": "Je hebt {{count}} opvolger slot(s) beschikbaar. Het systeem selecteert automatisch uit je laatste 3 stortende recruits.",
+    "awaitingSelection": "Wacht op Systeem Selectie...",
+    "usedAllSlots": "Je hebt al je opvolger nominaties gebruikt. Werf meer leden om extra slots te ontgrendelen!",
+    "recruitMore": "Werf nog {{count}} leden met stortingen om de opvolger nominatie functie te ontgrendelen.",
+    "actionRequired": "Actie Vereist!",
+    "autoSelected": "Het systeem heeft automatisch {{name}} geselecteerd als je opvolger. Bevestig of wijs deze nominatie af.",
+    "reviewNomination": "Nominatie Bekijken",
+    "confirmed": "Opvolger Bevestigd!",
+    "transferSuccess": "De opvolger is succesvol overgedragen."
+  },
+  "successorModal": {
+    "title": "Bevestig Opvolger",
+    "subtitle": "Bekijk en bevestig nominatie",
+    "joined": "Lid sinds {{date}}",
+    "autoSelectedAt": "Auto-geselecteerd {{date}}",
+    "explanation": "Door deze nominatie te bevestigen:",
+    "willMove": "{{name}} verhuist naar {{position1}}'s netwerk",
+    "noLongerDownline": "Ze maken niet langer deel uit van je directe downline",
+    "cannotUndo": "Deze actie kan niet ongedaan worden gemaakt",
+    "usedThisYear": "Opvolgers dit jaar gebruikt",
+    "confirming": "Bevestigen..."
+  },
+  "payments": {
+    "title": "Recente Betalingen",
+    "noPayments": "Nog geen betalingen",
+    "noPaymentsDesc": "Je ontvangt {{amount}} wanneer iemand in je netwerk Positie 4 bereikt (3 niveaus diep)"
+  },
+  "listline": {
+    "presenceTitle": "Je Listline Aanwezigheid",
+    "presenceSubtitle": "Bekijk hoe vaak je op elke positie verschijnt in alle listlines in het netwerk.",
+    "position1": "Positie 1",
+    "position1Desc": "Ontvangt betalingen",
+    "position2": "Positie 2",
+    "position2Desc": "2e voorouder in ketens",
+    "position3": "Positie 3",
+    "position3Desc": "Directe verwijzer",
+    "position4": "Positie 4",
+    "position4Desc": "Nieuwste lid",
+    "earningsFromPosition1": "Verdiensten van Positie 1",
+    "whatThisMeans": "Wat Dit Betekent",
+    "received": "Je hebt {{amount}} ontvangen van {{count}} leden",
+    "oneLevelAway": "Je bent één niveau verwijderd van verdienen op {{count}} ketens",
+    "directlyReferred": "Je hebt direct {{count}} leden verwezen",
+    "newestMember": "Je bent het nieuwste lid in {{count}} ketens",
+    "ownListlineTitle": "Je Eigen Listline",
+    "ownListlineSubtitle": "Dit is wie de betaling ontving toen je lid werd. Positie 1 ontving {{amount}} van je lidmaatschap.",
+    "howItWorks": "Hoe het werkt:",
+    "rule1": "Wanneer je iemand verwijst, wordt diegene Positie 4 in hun eigen listline",
+    "rule2": "Jij (hun verwijzer) wordt hun Positie 3",
+    "rule3": "Jouw verwijzer wordt hun Positie 2",
+    "rule4": "De verwijzer van jouw verwijzer (3 niveaus omhoog) wordt Positie 1 en ontvangt de betaling",
+    "rule5": "Het systeem int {{percent}}% onderhoudskosten van elke betaling",
+    "paymentFlows": "Betaling stroomt: P4 -> P3 -> P2 -> P1"
+  },
+  "positions": {
+    "receivedPayment": "Betaling Ontvangen",
+    "secondAncestor": "2e Voorouder",
+    "directReferrer": "Directe Verwijzer",
+    "you": "Jij"
+  },
+  "successorSystem": {
+    "title": "Opvolger Systeem",
+    "description": "Na het werven van {{count}} leden die storten, kan elke extra recruit worden genomineerd als \"Opvolger\" - geschonken aan je Positie 1 voorouder.",
+    "without": "Zonder Opvolger",
+    "withoutDesc": "Nieuwe recruit blijft in je directe downline",
+    "with": "Met Opvolger",
+    "withDesc": "Nieuwe recruit wordt verplaatst naar Positie 1's downline als beloning"
+  },
+  "referrals": {
+    "title": "Je Directe Verwijzingen",
+    "total": "totaal",
+    "joined": "Lid sinds {{date}}",
+    "deposited": "Gestort",
+    "pending": "In afwachting",
+    "noReferrals": "Nog geen verwijzingen",
+    "noReferralsDesc": "Deel je unieke link om je netwerk op te bouwen. Je verdient wanneer je keten 3 niveaus diep groeit!",
+    "copyLink": "Kopieer Verwijslink",
+    "networkTitle": "Je Verwijzingsnetwerk",
+    "networkSubtitle": "Interactieve 4-niveau boom visualisatie - klik op nodes voor details"
+  },
+  "simulation": {
+    "title": "Live Simulatie",
+    "subtitle": "Kijk hoe je netwerk in real-time groeit",
+    "speed": "Snelheid",
+    "views": "Weergaven",
+    "registrations": "Registraties",
+    "deposits": "Stortingen",
+    "successors": "Opvolgers",
+    "earnings": "Verdiensten",
+    "recentActivity": "Recente Activiteit",
+    "events": {
+      "newViews": "{{count}} nieuwe site weergave(n)",
+      "registered": "{{name}} geregistreerd",
+      "registeredUnder": "{{name}} geregistreerd onder {{parent}}",
+      "registeredDirect": "{{name}} geregistreerd (direct)",
+      "deposited": "{{name}} heeft {{amount}} gestort",
+      "receivedPayment": "Je ontving {{amount}} van {{name}}!",
+      "successorNominated": "OPVOLGER: {{name}} genomineerd! Verplaatst naar {{parent}}'s netwerk"
+    }
+  },
+  "status": {
+    "deposited": "Gestort",
+    "pending": "In afwachting",
+    "active": "Actief",
+    "verified": "Geverifieerd",
+    "cleared": "Vrijgegeven"
+  }
+}
